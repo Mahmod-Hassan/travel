@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "United Kingdom",
+    "image": "https://i.ibb.co/nz1D6Fw/uk.jpg",
+    "description": "Explore the rich history and cultural heritage of the United Kingdom. Visit iconic landmarks such as the Tower of London and Buckingham Palace. Enjoy the picturesque countryside and vibrant cities.",
+    "price": "$2000",
+    "review": "4.5/5",
+    "timezone": "GMT",
+    "country": "United Kingdom",
+    "population": "67 million",
+    "language": "English"
+  },
+  {
+    "id": "2",
+    "title": "Turkey",
+    "image": "https://i.ibb.co/dWqfz0t/turkey.jpg",
+    "description": "Discover the beauty of Turkey, where East meets West. Marvel at the ancient architecture of Istanbul, relax on the stunning beaches of Antalya, and experience the unique blend of cultures.",
+    "price": "$1500",
+    "review": "4.2/5",
+    "timezone": "GMT+3",
+    "country": "Turkey",
+    "population": "82 million",
+    "language": "Turkish"
+  },
+  {
+    "id": "3",
+    "title": "Thailand",
+    "image": "https://i.ibb.co/h9LQYT5/thailand.jpg",
+    "description": "Experience the tropical paradise of Thailand. Relax on the pristine beaches of Phuket, explore the bustling streets of Bangkok, and immerse yourself in the rich Thai culture and cuisine.",
+    "price": "$1800",
+    "review": "4.8/5",
+    "timezone": "GMT+7",
+    "country": "Thailand",
+    "population": "69 million",
+    "language": "Thai"
+  },
+  {
+    "id": "4",
+    "title": "France",
+    "image": "https://i.ibb.co/yfyGYpk/france.jpg",
+    "description": "Indulge in the romance and elegance of France. Visit the iconic Eiffel Tower in Paris, explore the vineyards of Bordeaux, and savor the exquisite cuisine in the heart of Europe.",
+    "price": "$2500",
+    "review": "4.7/5",
+    "timezone": "GMT+1",
+    "country": "France",
+    "population": "67 million",
+    "language": "French"
+  }
+]
