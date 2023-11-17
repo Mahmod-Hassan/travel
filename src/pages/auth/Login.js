@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/UserProvider';
 
@@ -6,24 +6,25 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [error, setError] = useState('');
     const [password, setPassword] = useState('');
-    const {user, setUser} = useContext(UserContext);
+    // const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
+    const {user, setLoggedIn} = useContext(UserContext);
+    console.log(user);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location?.state?.from?.pathname || '/';
-
-    const handleLogin = () => {
-        if (user?.email === email && user?.password === password) {
-          // Successful login
-          alert('Login successful!');
-        } else {
-          setError('Email does not exist, please register')
-        }
+    
+    const handleLogin = (event) => {
+        event.preventDefault();
+            if (user?.email === email && user?.password === password) {
+                alert('Login successful!');
+                setLoggedIn(true);
+                navigate(from, { replace: true });
+              } else {
+                setError('something went wrong')
+              }
       };
-      useEffect(() => {
-        if(user?.email){
-            navigate(from, { replace: true });
-        }
-      },[from, navigate, user?.email])
+  
+  
     return (
         <div className="w-full max-w-sm mx-auto mt-20  bg-white rounded-lg shadow-md ">
            <div className="px-6 py-4">
@@ -68,3 +69,5 @@ const Login = () => {
 };
 
 export default Login;
+
+

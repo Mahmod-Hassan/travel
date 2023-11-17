@@ -15,37 +15,13 @@ const navLinks = [
   ]
   
 const Navbar = () => {
-  // const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')) || null);
-  const {user, setUser} = useContext(UserContext);
-//   const [show, setShow] = useState("translate-y-0");
-//   const [lastScrollY, setLastScrollY] = useState(0);
 
+  const {loggedIn, setLoggedIn} = useContext(UserContext);
+  console.log(loggedIn)
 
-//   useEffect(() => {
-//     const controlNavbar = () => {
-//        if (window.scrollY > 200) {
-//          if (window.scrollY > lastScrollY) {
-//            setShow("-translate-y-[80px]");
-//          } else {
-//            setShow("translate-y-0");
-//          }
-//        } 
-//        else {
-//          setShow("translate-y-0");
-//        }
-//        setLastScrollY(window.scrollY);
-//      };
-//    window.addEventListener("scroll", controlNavbar);
-
-//    return () => {
-//      window.removeEventListener("scroll", controlNavbar);
-//    };
-//  }, [lastScrollY]);
-
-//  // handleLogout
- const handleLogout = () => {
-  setUser(null);
- }
+  const handleLogout = () => {
+    setLoggedIn(false);
+  }
 
 // return jsx
     return (
@@ -74,7 +50,7 @@ const Navbar = () => {
             <div className="flex items-center gap-4">
               <div className="hidden md:block">
                 {
-                  user?.email ? 
+                  loggedIn ? 
                   (
                     <div className='flex gap-4'>
                        <FaCircleUser className='w-10 h-10' />

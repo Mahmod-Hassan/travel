@@ -3,11 +3,11 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { UserContext } from '../context/UserProvider';
 
 const PrivateRoute = ({children}) => {
-    const {user} = useContext(UserContext);
+    const {loggedIn} = useContext(UserContext);
     const location = useLocation();
        
 
-    if (user?.email) {
+    if (loggedIn) {
         return children;
     }
 
