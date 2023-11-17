@@ -1,11 +1,11 @@
 import React from 'react';
-import BookingForm from '../../components/BookingForm';
+import Banner from '../../components/Banner';
 import Destinations from './Destinations';
 
 const Home = () => {
     return (
         <div>
-            <BookingForm />
+            <Banner />
             <Destinations />
         </div>
     );

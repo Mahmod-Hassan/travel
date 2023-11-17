@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { FaCircleUser } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import icon from '../assets/img/travel-icon.png';
+import { UserContext } from '../context/UserProvider';
 const navLinks = [
     {
       title: 'Home',
@@ -14,42 +15,41 @@ const navLinks = [
   ]
   
 const Navbar = () => {
-  const [user, setUser] = useState(null);
-  const [show, setShow] = useState("translate-y-0");
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')) || null);
+  const {user, setUser} = useContext(UserContext);
+//   const [show, setShow] = useState("translate-y-0");
+//   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // useEffect hook is used to handle navbar hand and show
-  useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem('user')));
-    const controlNavbar = () => {
-       if (window.scrollY > 200) {
-         if (window.scrollY > lastScrollY) {
-           setShow("-translate-y-[80px]");
-         } else {
-           setShow("translate-y-0");
-         }
-       } 
-       else {
-         setShow("translate-y-0");
-       }
-       setLastScrollY(window.scrollY);
-     };
-   window.addEventListener("scroll", controlNavbar);
 
-   return () => {
-     window.removeEventListener("scroll", controlNavbar);
-   };
- }, [lastScrollY]);
+//   useEffect(() => {
+//     const controlNavbar = () => {
+//        if (window.scrollY > 200) {
+//          if (window.scrollY > lastScrollY) {
+//            setShow("-translate-y-[80px]");
+//          } else {
+//            setShow("translate-y-0");
+//          }
+//        } 
+//        else {
+//          setShow("translate-y-0");
+//        }
+//        setLastScrollY(window.scrollY);
+//      };
+//    window.addEventListener("scroll", controlNavbar);
 
- // handleLogout
+//    return () => {
+//      window.removeEventListener("scroll", controlNavbar);
+//    };
+//  }, [lastScrollY]);
+
+//  // handleLogout
  const handleLogout = () => {
-   localStorage.removeItem('user');
-   setUser(null);
+  setUser(null);
  }
 
 // return jsx
     return (
-        <header  className={`px-4 md:px-10 z-100 bg-white sticky top-0 transition-transform duration-300 ${show}`}>
+        <header  className={`px-4 md:px-10 z-100 bg-white sticky top-0 transition-transform duration-300`}>
         {/* <div className=" mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8"> */}
           <div className="flex h-16 items-center justify-between">
             <div className="md:flex md:items-center md:gap-12">
